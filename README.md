@@ -44,7 +44,7 @@ installation.yaml
 installation_id: "hotoo.rmbp"
 sync_dir: "/Users/hotoo/Dropbox/RimeSync"
 ```
-windows上面，sync_dic最好用单引号或者不用引号，否则用双引号'\\\\'表示'\'。
+windows上面，sync_dic最好用单引号或者不用引号，否则用双反斜线'\\\\'表示'\'。
 ```yaml
 installation_id: "yantze"
 sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
