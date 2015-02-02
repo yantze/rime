@@ -53,6 +53,7 @@ sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
 配置的同步是单向的同步,即由"用户文件夹"指向"同步文件夹"
 
 ## 参考
+* [致第一次安装 RIME 的你之修订版](http://tieba.baidu.com/p/3288634121)
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
 * [中州韵（小狼毫，鼠须管）输入法设置](http://blog.yesmryang.net/rime-setting/)
 * [說明書#同步用戶資料](https://code.google.com/p/rimeime/wiki/UserGuide#同步用戶資料)
