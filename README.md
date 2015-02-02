@@ -49,6 +49,8 @@ windows上面，sync_dic最好用单引号或者不用引号，否则用双反�
 installation_id: "yantze"
 sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
 ```
+字典的同步是双向合并
+配置的同步是单向的同步,即由"用户文件夹"指向"同步文件夹"
 
 ## 参考
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
