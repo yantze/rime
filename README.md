@@ -52,6 +52,30 @@ sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
 字典的同步是双向合并
 配置的同步是单向的同步,即由"用户文件夹"指向"同步文件夹"
 
+## 一些快捷键
+
+输入的时候删除一个音节
+
+⌃ + BackSpace 或 ⇧ + BackSpace
+
+从用户词典中删除误上屏的错词
+
+Shift + Fn + Delete
+
+Emacs 风格的编辑键
+
+↑：⌃ + p
+↓：⌃ + n
+←：⌃ + b
+→：⌃ + f
+上页：⌥ + v
+下页：⌃ + v
+句首：⌃ + a
+句末：⌃ + e
+回退：⌃ + h
+刪除：⌃ + d
+清空：⌃ + g
+
 ## 参考
 * [致第一次安装 RIME 的你之修订版](http://tieba.baidu.com/p/3288634121)
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
