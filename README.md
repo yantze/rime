@@ -55,15 +55,15 @@ sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
 ## 一些快捷键
 
 输入的时候删除一个音节
-
+```
 ⌃ + BackSpace 或 ⇧ + BackSpace
-
+```
 从用户词典中删除误上屏的错词
-
+```
 Shift + Fn + Delete
-
+```
 Emacs 风格的编辑键
-
+```
 ↑：⌃ + p
 ↓：⌃ + n
 ←：⌃ + b
@@ -75,8 +75,10 @@ Emacs 风格的编辑键
 回退：⌃ + h
 刪除：⌃ + d
 清空：⌃ + g
+```
 
 ## 参考
+* [安装及配置 Mac 上的 Rime 输入法](http://www.dreamxu.com/install-config-squirrel/)
 * [致第一次安装 RIME 的你之修订版](http://tieba.baidu.com/p/3288634121)
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
 * [中州韵（小狼毫，鼠须管）输入法设置](http://blog.yesmryang.net/rime-setting/)
