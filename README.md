@@ -1,5 +1,5 @@
 
-# 闲耘的 Rime 配置说明
+# Rime 配置说明
 
 [Rime](http://code.google.com/p/rimeime/) 输入法是一款适用于 Mac OSX, Linux,
 Windows 的输入法，Rime 在不同平台下的对应名称如下：
@@ -44,7 +44,11 @@ installation.yaml
 installation_id: "hotoo.rmbp"
 sync_dir: "/Users/hotoo/Dropbox/RimeSync"
 ```
-
+windows上面，sync_dic最好用单引号或者不用引号，否则用双引号要用'\\'表示'\'。
+```yaml
+installation_id: "yantze"
+sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
+```
 
 ## 参考
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
