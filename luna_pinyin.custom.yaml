@@ -1,20 +1,47 @@
 # luna_pinyin.custom.yaml
 #
-# 【朙月拼音】模糊音定製模板
-#   佛振配製 :-)
+# 補靪功能：將朙月拼音的詞庫修改爲朙月拼音擴充詞庫
 #
-# 位置：
+# 作者：瑾昀 <cokunhui@gmail.com>
+#
+# 部署位置：
 # ~/.config/ibus/rime  (Linux)
 # ~/Library/Rime  (Mac OS)
 # %APPDATA%\Rime  (Windows)
 #
 # 於重新部署後生效
 #
+#
+# 注意：本補靪適用於所有朙月拼音系列方案（「朙月拼音」、「朙月拼音·简化字」、「朙月拼音·臺灣正體」、「朙月拼音·語句流」）。
+# 只須將本 custom.yaml 的前面名字改爲對應的輸入方案名字然後放入用戶文件夾重新部署即可。如 luna_pinyin_simp.custom.yaml。
+# 雙拼用戶請使用 double_pinyin.custom.yaml。
+#
+#
+# 附朙月拼音系列方案與其對應的 id 一覽表：
+# 輸入方案	id
+# 朙月拼音	luna_pinyin
+# 朙月拼音·简化字	luna_pinyin_simp
+# 朙月拼音·臺灣正體	luna_pinyin_tw
+# 朙月拼音·語句流	luna_pinyin_fluency
+#
 
 patch:
+  # 載入朙月拼音擴充詞庫
+  "translator/dictionary": luna_pinyin.extended
+  # 改寫拼寫運算，使得含西文的詞彙（位於 luna_pinyin.cn_en.dict.yaml 中）不影響簡拼功能（注意，此功能只適用於朙月拼音系列方案，不適用於各類雙拼方案）
+  # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
+  "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
+
+  #other
+  #标点及特殊表情
+  'punctuator/import_preset': mysymbols
+  'recognizer/patterns/punct': "^/([a-z]+|[0-9])$"
+  #扩充词典
+  'translator/dictionary': luna_pinyin.extended
+  "speller/algebra/@before 0": xform/^([a-z])$/$1_/
+  #模糊拼音
   'speller/algebra':
     - erase/^xx$/                      # 第一行保留
-
     # 模糊音定義
     # 需要哪組就刪去行首的 # 號，單雙向任選
     #- derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
@@ -27,6 +54,7 @@ patch:
     #- derive/^r/l/                     # r => l
 
     #- derive/^ren/yin/                 # ren => yin, reng => ying
+    - derive/^shen/sehn/
     #- derive/^r/y/                     # r => y
 
     # 下面 hu <=> f 這組寫法複雜一些，分情況討論
@@ -42,8 +70,11 @@ patch:
 
     # 韻母部份
     #- derive/^([bpmf])eng$/$1ong/      # meng = mong, ...
-    - derive/([ei])n$/$1ng/            # en => eng, in => ing
-    - derive/([ei])ng$/$1n/            # eng => en, ing => in
+    #- derive/([ei])n$/$1ng/            # en => eng, in => ing
+    #- derive/([ei])ng$/$1n/            # eng => en, ing => in
+ 
+    #自制
+    #- derive/^([sj])hen$/$1ehn/
 
     # 樣例足夠了，其他請自己總結……
 
@@ -68,7 +99,7 @@ patch:
     #- derive/^fei$/fi/                 # fei => fi
     #- derive/^wei$/vi/                 # wei => vi
     #- derive/^([nl])ei$/$1ui/          # nei => nui, lei => lui
-    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ...
+    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ... 
     #- derive/^([nlzcs])ong$/$1iong/    # long => liong, song => siong, ...
     # 這個辦法雖從拼寫上做出了區分，然而受詞典制約，候選字仍是混的。
     # 只有真正的方音輸入方案纔能做到！但「反模糊音」這個玩法快速而有效！

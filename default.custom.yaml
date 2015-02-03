@@ -5,7 +5,28 @@
 #   %APPDATA%\Rime       (windows)
 
 patch:
-  "menu/page_size": 7   # 每頁候選數
+  "menu/page_size": 6     # 每頁候選數
+  # 如果要把Caps Lock 设为只改变字母的大小写而不做中西文切换，可将 Caps_Lock 对应的切换方式设为 noop
+  # 如果要以Caps Lock 切换到西文模式，默认输出小写字母，请置 ascii_composer/good_old_caps_lock: false
+  # 如果要以Caps Lock 切换到西文模式，默认输出大写字母，请置 ascii_composer/good_old_caps_lock: true
+
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Shift_L: commit_code  # 切换为英文，并把输入的字符放在输入框（不转为中文）
+    Shift_R: commit_text  # commit_text(把文本放在输入区), inline_ascii(显示在界面中)
+    Control_L: noop
+    Control_R: noop
+  "switcher/hotkeys":
+    - "Control+grave"     # 只开启ctrl+ Tab上面那个键
+  key_binder/bindings:
+    - when: paging
+      accept: bracketleft
+      send: Page_Up
+    - when: has_menu
+      accept: bracketright
+      send: Page_Down
+	
   "punctuator/full_shape/%":
       - "%"
       - "‰"
