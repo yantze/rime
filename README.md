@@ -1,5 +1,5 @@
 
-# 闲耘的 Rime 配置说明
+# Rime 配置说明
 
 [Rime](http://code.google.com/p/rimeime/) 输入法是一款适用于 Mac OSX, Linux,
 Windows 的输入法，Rime 在不同平台下的对应名称如下：
@@ -44,9 +44,42 @@ installation.yaml
 installation_id: "hotoo.rmbp"
 sync_dir: "/Users/hotoo/Dropbox/RimeSync"
 ```
+windows上面，sync_dic最好用单引号或者不用引号，否则用双反斜线'\\\\'表示'\'。
+```yaml
+installation_id: "yantze"
+sync_dir: 'D:\Work\dropbox\Apps\RimeSync'
+```
+字典的同步是双向合并
+配置的同步是单向的同步,即由"用户文件夹"指向"同步文件夹"
 
+## 一些快捷键
+
+输入的时候删除一个音节
+```
+⌃ + BackSpace 或 ⇧ + BackSpace
+```
+从用户词典中删除误上屏的错词
+```
+Shift + Fn + Delete
+```
+Emacs 风格的编辑键
+```
+↑：⌃ + p
+↓：⌃ + n
+←：⌃ + b
+→：⌃ + f
+上页：⌥ + v
+下页：⌃ + v
+句首：⌃ + a
+句末：⌃ + e
+回退：⌃ + h
+刪除：⌃ + d
+清空：⌃ + g
+```
 
 ## 参考
+* [安装及配置 Mac 上的 Rime 输入法](http://www.dreamxu.com/install-config-squirrel/)
+* [致第一次安装 RIME 的你之修订版](http://tieba.baidu.com/p/3288634121)
 * [Rime 定製指南](http://code.google.com/p/rimeime/wiki/CustomizationGuide)
 * [中州韵（小狼毫，鼠须管）输入法设置](http://blog.yesmryang.net/rime-setting/)
 * [說明書#同步用戶資料](https://code.google.com/p/rimeime/wiki/UserGuide#同步用戶資料)
